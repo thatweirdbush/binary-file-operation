@@ -5,11 +5,11 @@
 * ### Ex: cd C:\binary-file-operation\x64\Debug\
 
 ### 1. MYCOPYFILE
-* ### Ex: MYCOPYFILE D:/film.mkv D:/Level1/Level2/Level3
+* ### Ex: MYCOPYFILE -s D:/film.mkv -d D:/Level1/Level2/Level3
 
 ### 3. MYSPLITFILE
-* ### Ex: MYSPLITFILE D:/film.mkv D:/Level1/Level2/Level3 -numpart 3
-* ### Ex: MYSPLITFILE D:/film.mkv D:/Level1/Level2/Level3 -sizeapart 1000000
+* ### Ex: MYSPLITFILE -s D:/film.mkv -d D:/Level1/Level2/Level3 -numpart 3
+* ### Ex: MYSPLITFILE -s D:/film.mkv -d D:/Level1/Level2/Level3 -sizeapart 1000000
 
 ### 5. MYMERGEFILE
-* ### Ex: MYMERGEFILE D:/Level1/Level2/Level3/film.mkv.part01 D:/NewLevel
+* ### Ex: MYMERGEFILE -s D:/Level1/Level2/Level3/film.mkv.part01 -d D:/NewLevel
