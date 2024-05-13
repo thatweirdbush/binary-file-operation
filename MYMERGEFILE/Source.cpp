@@ -4,7 +4,10 @@ void mergeFile(string source, string destination) {
 	// Get origin filename from source path
 	string originFilename = source.substr(source.find_last_of("/\\") + 1);
 
-	// Remove .part01 from filename
+	// Get source folder path
+	source = source.substr(0, source.find_last_of("/\\"));
+
+	// Remove .part1 from filename
 	originFilename = originFilename.substr(0, originFilename.find(".part1"));
 
 	// Concate the filename to destination path
@@ -18,7 +21,7 @@ void mergeFile(string source, string destination) {
 	int i = 1;
 	cout << "Merging file..." << endl;
 	while (true) {
-		string partFile = destination + ".part" + to_string(i);
+		string partFile = source + "\\" + originFilename + ".part" + to_string(i);
 		ifstream ifs(partFile, ios::binary);
 		if (!ifs.is_open()) {
 			ifs.close();

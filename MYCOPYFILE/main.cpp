@@ -11,17 +11,17 @@
 
 cd C:\Users\huyph\Downloads\21120082\x64\Debug\
 
-MYCOPYFILE C:\Users\huyph\Downloads\21120082\MYCOPYFILE\data.bin D:\data.bin
+MYCOPYFILE -s C:\Users\huyph\Downloads\21120082\MYCOPYFILE\data.bin -d D:\
 
 */
 
 int main(int argc, char* argv[]) {
-	if (argc != 3) {
-		cerr << "Invalid arguments." << endl;
+	if (argc != 5 || string(argv[1]) != "-s" || string(argv[3]) != "-d") {
+		cerr << "Invalid arguments.\nTry this example: MYCOPYFILE -s C:\\data.txt -d D:\\data.txt" << endl;
 		return 1;
 	}
-	string source = argv[1];
-	string destination = argv[2];
+	string source = argv[2];
+	string destination = argv[4];
 	copyFile(source, destination);
 
 	system("pause");

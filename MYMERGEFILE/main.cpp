@@ -12,17 +12,17 @@
 
 cd C:\Users\huyph\Downloads\21120082\x64\Debug\
 
-MYMERGEFILE C:\Users\huyph\Downloads\21120082\MYMERGEFILE\data.bin.part1 D:\TestFolder
+MYMERGEFILE -s C:\Users\huyph\Downloads\21120082\MYMERGEFILE\data.bin.part1 -d D:\TestFolder
 
 */
 
 int main(int argc, char* argv[]) {
-	if (argc != 3) {
-		cerr << "Invalid arguments." << endl;
+	if (argc != 5 || string(argv[1]) != "-s" || string(argv[3]) != "-d") {
+		cerr << "Invalid arguments.\nTry this example: MYMERGEFILE -s C:\\data.txt.part1 -d D:\\TestFolder" << endl;
 		return 1;
 	}
-	string source = argv[1];
-	string destination = argv[2];
+	string source = argv[2];
+	string destination = argv[4];
 	mergeFile(source, destination);
 
 	system("pause");
